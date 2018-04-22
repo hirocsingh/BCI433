@@ -1,0 +1,54 @@
+000100180402     A          R TITLE
+000101180402     A                                  1  2DATE(*YY)
+000102180402     A                                  1 11TIME
+000103180402     A                                  1 40'Weekly Payroll Report'
+000104180402     A                                  1100PAGNBR
+000105180402     A                                  2  2'Name: Avinash Singh'
+000106180402     A            WEEKTYPE      30      2 34
+000107180402     A          R COLHDG                    SPACEB(3)
+000108180402     A                                     7'Employee'
+000109180402     A                                    19'Work '
+000110180402     A                                    30'Pay '
+000111180402     A                                    40'Hourly '
+000112180402     A                                    51'Hours '
+000113180402     A                                    61'Regular '
+000114180402     A                                    76'Overtime'
+000115180402     A                                    93'Total'
+000116180402     A                                   105'Tax'
+000117180402     A                                   116'Dues'
+000118180402     A                                   126'Net'
+000119180402     A                                     8'Number'
+000120180402     A                                      SPACEB(1)
+000121180402     A                                    19'Shift'
+000122180402     A                                    29'Grade'
+000123180402     A                                    41'Rate'
+000124180402     A                                    51'Worked'
+000125180402     A                                    63'Pay'
+000126180402     A                                    78'Pay'
+000127180402     A                                    94'Pay'
+000128180402     A                                   103'Deducted'
+000129180402     A                                   126'Pay'
+000130180402     A          R EMPDETAIL                 SPACEB(3)
+000131180402     A            EMPNUM    R              5REFFLD(ALLSHIFT/EMPNUM SENECAPAY/AL-
+000132180402     A                                      LSHIFT)
+000133180402     A                                      EDTWRD('0  -   -   ')
+000134180402     A            WORKSHIFT R             21REFFLD(ALLSHIFT/WORKSHIFT +
+000135180402     A                                      SENECAPAY/ALLSHIFT)
+000136180402     A            PAYGRADE  R             31REFFLD(ALLSHIFT/PAYGRADE +
+000137180402     A                                      SENECAPAY/ALLSHIFT)
+000138180402     A            HOURLYRATE     5  2     40EDTCDE(2)
+000139180402     A            HRSWORKED R             52REFFLD(ALLSHIFT/HRSWORKED +
+000140180402     A                                      SENECAPAY/ALLSHIFT)
+000141180402     A                                      EDTCDE(2)
+000142180402     A            REGULARPAY     7  2     61EDTCDE(2)
+000143180402     A            OVERPAY        7  2     75EDTCDE(2)
+000144180402     A            TOTALPAY       7  2     88EDTCDE(2)
+000145180402     A            TOTALTAX       7  2     99EDTCDE(2)
+000146180402     A            DUESAC         5  2    112EDTCDE(2)
+000147180402     A            TOTALNET       7  2    123EDTCDE(2)
+000148180402     A          R TOTALS                    SPACEB(2)
+000149180402     A                                    44'Totals: '
+000150180402     A            TOTREGPAY      9  2     57
+000151180402     A                                      EDTCDE(1 $)
+000152180402     A            TOTOVTPAY      9  2     72EDTCDE(1 $)
+000153180402     A            TOTEMPPAY      9  2     88EDTCDE(1 $)

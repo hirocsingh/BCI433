@@ -1,0 +1,25 @@
+000100180409     A          R ETITLE
+000101180402     A                                  1  2DATE(*YY)
+000102180402     A                                  1 11TIME
+000104180402     A                                  1100PAGNBR
+000107180409     A                                  1 53'ERROR REPORT'
+000108180409     A            WEEKTYPE1     30      1 22
+000109180409     A                                  2 24'UNMATCHED RECORDS - NO MATCHING EM-
+000110180409     A                                      PLOYEE RECORDS'
+000111180409     A          R ECOLHDG                   SPACEB(3)
+000112180402     A                                     7'Employee'
+000113180409     A                                    30'Work '
+000116180402     A                                    51'Hours '
+000123180402     A                                     8'Number'
+000124180409     A                                      SPACEB(1)
+000125180409     A                                    29'Shift'
+000128180402     A                                    51'Worked'
+000134180409     A          R EEMPDETAIL                SPACEB(3)
+000135180402     A            EMPNUM    R              5REFFLD(ALLSHIFT/EMPNUM SENECAPAY/AL-
+000136180402     A                                      LSHIFT)
+000137180402     A                                      EDTWRD('0  -   -   ')
+000138180409     A            WORKSHIFT R             32REFFLD(ALLSHIFT/WORKSHIFT +
+000139180402     A                                      SENECAPAY/ALLSHIFT)
+000143180402     A            HRSWORKED R             52REFFLD(ALLSHIFT/HRSWORKED +
+000144180402     A                                      SENECAPAY/ALLSHIFT)
+000145180402     A                                      EDTCDE(2)

@@ -1,0 +1,40 @@
+000001180130     A          R TOLLINFO                                                                          
+000002180205     A                                  2 71DATE                                                    
+000003180205     A                                      EDTCDE(Y)                                               
+000004180205     A                                  3 24'H I G H W A Y     4 0 8     T O L -                    
+000005180205     A                                      L S'                                                    
+000006180205     A                                  4 35'Trip Information'                                      
+000007180205     A                                  5  9'Kilometers traveled:'                                  
+000008180205     A                                  6  9'Type of vehicle:'                                      
+000009180205     A                                  7  9'Time of Day:'                                          
+000010180205     A                                  9  9'Transponder:'                                          
+000013180205     A                                  2  3USER                                                    
+000014180205     A                                  6 37'(L - Light, H - Heavy, M - Multipl-                    
+000015180205     A                                      e Heavy)'                                               
+000016180205     A                                  7 37'(0 - 12)'                                              
+000017180205     A                                  7 58'(AM or PM)'                                            
+000018180205     A                                  9 37'(Y or N)'                                              
+000019180205     A            KILOMETERS     3  0B  5 31RANGE(0 999)                                            
+000020180205     A  99                                  DSPATR(PR)                                              
+000022180205     A            VEHICLE        1   B  6 31VALUES('L' 'H' 'M')                                     
+000023180205     A            HOUR           2  0B  7 31RANGE(1 12)                                             
+000024180205     A            AMPM           2   B  7 51VALUES('AM' 'PM')                                       
+000025180212     A            TRANSPDR       1A  B  9 31VALUES('Y' 'N')                                         
+000027180205     A          R SHOWTOLL                  CA03(03)                                                
+000028180205     A                                      OVERLAY                                                 
+000029180205     A                                 12 26'Applicable Toll Charges'                               
+000030180205     A                                 13 16'Toll Rate:'                                            
+000031180205     A                                 14 14'Toll Charge:'                                          
+000032180205     A                                 15  4'No Transponder Charge:'                                
+000033180205     A                                 17  9'T O T A L  C H A R G E:'                               
+000034180205     A            TOLLRATE       5Y 4O 13 40EDTCDE(1 $)                                             
+000035180205     A            TOLLCHARGE     5Y 2O 14 40EDTCDE(1 $)                                             
+000036180205     A            NOTRANSP       4  2O 15 40EDTCDE(1)                                               
+000037180205     A            TOTALDUE       5  2O 17 40EDTWRD('   .  ')                                        
+000038180205     A                                 19  4'F3 - Exit'                                             
+000100                                                                                                          
+000101180212     A*%%RS+<record-sequences>                                                                      
+000102180212     A*%%RS+ <sequence name="Untitled">                                                             
+000103180212     A*%%RS+  <device type="display" width="80" height="24" />                                      
+000104180212     A*%%RS+ </sequence>                                                                            
+000105180212     A*%%RS </record-sequences>                                                                     

@@ -1,0 +1,54 @@
+000100180319             PGM
+000101180319             DCL        &SHIFT *CHAR 1
+000102180319             DCL        &OUTQ *CHAR 10
+000103180319             DCL        &OUTQLIB *CHAR 10
+000104180319             DCL        &SHIFTTYPE *CHAR 30
+000105180319
+000106180319             RTVUSRPRF  OUTQ(&OUTQ) OUTQLIB(&OUTQLIB)
+000107180319             CLROUTQ    &OUTQLIB/&OUTQ
+000108180319             MONMSG     MSGID(CPF0000)
+000109180319
+000110180319
+000111180319             SNDUSRMSG  MSG('1 - Day Shift, 2 - Night Shift, 3 - Afternoon Shift, 4 - All +
+000112180319                          Shift 5 - EXIT') MSGRPY(&SHIFT)
+000113180319             DOWHILE    (&SHIFT *NE '5')
+000114180319                SELECT
+000115180319                   WHEN       (&SHIFT = '1') DO
+000116180319                      CHGVAR     &SHIFTTYPE 'D A Y  S H I F T'
+000117180319                      OVRPRTF    FILE(PAYRPT2) SPLFNAME(DAY)
+000118180319                      OVRDBF     ALLSHIFT DAY
+000119180319                      CALLPRC    PAYROLLPG3 PARM(&SHIFTTYPE)
+000120180319                      DSPSPLF    FILE(DAY) SPLNBR(*LAST)
+000122180319                   ENDDO
+000123180319                   WHEN       (&SHIFT = '2') DO
+000124180319                      CHGVAR     &SHIFTTYPE 'N I G H T  S H I F T'
+000125180319                      OVRPRTF    FILE(PAYRPT2) SPLFNAME(NIGHT)
+000126180319                      OVRDBF     ALLSHIFT NIGHT
+000127180319                      CALLPRC    PAYROLLPG3 PARM(&SHIFTTYPE)
+000128180319                      DSPSPLF    FILE(NIGHT) SPLNBR(*LAST)
+000130180319                   ENDDO
+000131180319                   WHEN       (&SHIFT = '3') DO
+000132180319                      CHGVAR     &SHIFTTYPE 'A F T E R N O O N  S H I F T'
+000133180319                      OVRPRTF    FILE(PAYRPT2) SPLFNAME(AFTERNOON)
+000134180319                      OVRDBF     ALLSHIFT AFTERNOON
+000135180319                      CALLPRC    PAYROLLPG3 PARM(&SHIFTTYPE)
+000136180319                      DSPSPLF    FILE(AFTERNOON) SPLNBR(*LAST)
+000138180319                   ENDDO
+000139180319                   WHEN       (&SHIFT = '4') DO
+000140180319                      CHGVAR     &SHIFTTYPE 'A L L  S H I F T S'
+000141180319                      OVRPRTF    FILE(PAYRPT2) OVRFLW(25) SPLFNAME(ALLSHIFTS)
+000142180319                      OVRDBF     ALLSHIFT ALLSHIFTS
+000143180319                      CALLPRC    PAYROLLPG3 PARM(&SHIFTTYPE)
+000144180319                      DSPSPLF    FILE(ALLSHIFTS) SPLNBR(*LAST)
+000146180319                   ENDDO
+000147180319                   WHEN       (&SHIFT *NE '5') SNDUSRMSG MSG(&SHIFT *CAT ' Invalid +
+000148180319                                Selection.Please ENTER to continue.')
+000149180319                ENDSELECT
+000150180319                SNDUSRMSG  MSG('1 - Day Shift, 2 - Night Shift, 3 - Afternoon Shift, 4 - All +
+000151180319                             Shift 5 - EXIT') MSGRPY(&SHIFT)
+000152180319             ENDDO
+000153180319             WRKOUTQ    &OUTQLIB/&OUTQ
+000154180319             ENDPGM
+000155180319
+000156180319
+000157180319

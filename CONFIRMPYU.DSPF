@@ -1,0 +1,28 @@
+000100180402     A          R RECORD1
+000101180402     A                                  2  3USER
+000102180402     A                                  2 70DATE
+000103180402     A                                      EDTCDE(Y)
+000104180402     A                                  2 30'Payroll Program Completed'
+000105180402     A                                  3  3'Avinash Singh'
+000106180402     A                                  5 12'Rates:'
+000107180402     A            DAYRATE   R        O  7 37REFFLD(SHIFTRATES/DAYRATE +
+000108180402     A                                      SENECAPAY/SHIFTRATES)
+000109180402     A                                      EDTCDE(1)
+000110180402     A                                  7 21'Day Rate:'
+000111180402     A                                  8 21'Afternoon Rate:'
+000112180402     A                                  9 21'Night Rate:'
+000113180402     A            AFTNRATE  R        O  8 37REFFLD(SHIFTRATES/AFTNRATE +
+000114180402     A                                      SENECAPAY/SHIFTRATES)
+000115180402     A                                      EDTCDE(1)
+000116180402     A            NIGHTRATE R        O  9 37REFFLD(SHIFTRATES/NIGHTRATE +
+000117180402     A                                      SENECAPAY/SHIFTRATES)
+000118180402     A                                      EDTCDE(1)
+000119180402     A                                 11 12'Totals:'
+000120180402     A                                 12 21'Regular Pay:'
+000121180402     A                                 13 21'Overtime Pay:'
+000122180402     A                                 14 21'Company Payout:'
+000123180402     A            TOTREGPAY      9  2O 12 37EDTCDE(1)
+000124180402     A            TOTOVTPAY      9  2O 13 37EDTCDE(1)
+000125180402     A            TOTEMPPAY      9  2O 14 37EDTCDE(1 $)
+000126180402     A                                  1  3USER
+000127180402     A            WEEKTYPE      30   O  4 26
